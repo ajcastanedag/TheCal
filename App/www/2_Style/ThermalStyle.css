@@ -7,7 +7,7 @@ Style for the UAS app
 /*-----------------------------------------------------------------*/
 /* Customize fonts */
 body, label, input, button, select { 
-    font-family: Roboto !important;
+    font-family:  Nunito Sans  !important;
     font-weight: 200;
 }
 
