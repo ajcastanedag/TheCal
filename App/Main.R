@@ -66,7 +66,7 @@ server <- function(input, output, session) {
 # Create Shiny app
 shinyApp(ui, server)
 
-getSDK("Lin", paste0(Root,"/www/1_SDK"))
+getSDK("Win", paste0(Root,"/www/1_SDK"))
 
 
 
