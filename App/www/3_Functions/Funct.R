@@ -1,3 +1,17 @@
+################################################################################
+getSDK <- function(System, Path){
+  if(System == "Win"){
+    download("https://dl.djicdn.com/downloads/dji_thermal_sdk/20221108/dji_thermal_sdk_v1.4_20220929.zip", dest="SDK.zip", mode="wb") 
+  }else if(System == "Lin"){
+    download("https://dl.djicdn.com/downloads/dji_thermal_sdk/20221108/dji_thermal_sdk_v1.4_20220929.zip", dest="SDK.zip", mode="wb") 
+  }
+  unzip ("SDK.zip", exdir = Path)
+  file.remove("SDK.zip") 
+}
+
+
+
+################################################################################
 ThermalCal <- function(sdk_dir, emissivity, humidity,distance,in_dir,out_dir){
   
   ### dir where DJI Thermal SDK is located (select appropriate release according to your OS).
