@@ -8,7 +8,7 @@ pacman::p_load("shiny","shinyWidgets", "stringr","shinyjs", "shinythemes", "shin
 
 ##### Set working directory (temporal for testing)                              ----- 
 Root <- paste0(getwd(),"/App")   
-Root <- paste0(getwd())   
+#Root <- paste0(getwd())   
 ##### Add resource path                                                         ----- 
 addResourcePath(prefix = 'media', directoryPath = paste0(Root,"/www"))
 ##### Include Functions file-> IF NOT SPECIFIED LIDAR COMPUTER FILE WILL BE USED----- 
@@ -66,7 +66,7 @@ server <- function(input, output, session) {
 # Create Shiny app
 shinyApp(ui, server)
 
-getSDK("Win", paste0(Root,"/www/1_SDK"))
+getSDK("Lin", paste0(Root,"/www/1_SDK"))
 
 
 

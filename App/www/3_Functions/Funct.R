@@ -91,6 +91,6 @@ ColPal$B <- sapply(ColPal$ColHex, function(hex) {
 
 ColPal <- ColPal[, c("Val","R","G","B")]
 
-write.table(ColPal, file = "/.../output.txt", sep = " ", row.names = FALSE, col.names = FALSE)
+write.table(ColPal, file = "output.txt", sep = " ", row.names = FALSE, col.names = FALSE)
 
 
