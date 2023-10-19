@@ -58,5 +58,39 @@ ThermalCal <- function(sdk_dir, emissivity, humidity,distance,in_dir,out_dir){
   file.remove(list.files(out_dir, recursive = TRUE, full.names = T, pattern = "_T.raw"))
   
 }
+################################################################################
+library(viridisLite)
+
+
+Start <- 0
+End <- 100
+Val <-  seq(Start,End,10)
+Pal <- viridis(length(Val), alpha = 1, begin = 0, end = 1, direction = 1, option = "B")
+
+ColPal <- data.frame("Val" = Val,
+                     "ColHex" = Pal,
+                     "R"=NA,
+                     "G"=NA,
+                     "B"=NA) 
+
+# Apply the operation to all values in ColHex
+ColPal$R <- sapply(ColPal$ColHex, function(hex) {
+  rgb_values <- col2rgb(paste0("#", substr(hex, 2, 7)))
+  return(rgb_values[1])
+})
+
+ColPal$G <- sapply(ColPal$ColHex, function(hex) {
+  rgb_values <- col2rgb(paste0("#", substr(hex, 2, 7)))
+  return(rgb_values[2])
+})
+
+ColPal$B <- sapply(ColPal$ColHex, function(hex) {
+  rgb_values <- col2rgb(paste0("#", substr(hex, 2, 7)))
+  return(rgb_values[3])
+})
+
+ColPal <- ColPal[, c("Val","R","G","B")]
+
+write.table(ColPal, file = "/.../output.txt", sep = " ", row.names = FALSE, col.names = FALSE)
 
 
